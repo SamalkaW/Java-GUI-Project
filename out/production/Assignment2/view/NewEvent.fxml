@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewEventController">
+   <children>
+      <Label layoutX="229.0" layoutY="14.0" prefHeight="27.0" prefWidth="156.0" text="New Event Post" textFill="#2faf6f">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="71.0" layoutY="214.0" prefHeight="224.0" prefWidth="473.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="227.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="260.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="1. Event Name : ">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="2. Event Description: : " GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="3. Event Venue: : " GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="4. Event Date: " GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="5. Event Capacity:" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="eventNameTextfield" prefHeight="25.0" prefWidth="169.0" GridPane.columnIndex="1" />
+            <TextField fx:id="eventDescriptionTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="eventVenueTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="eventDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="eventCapacityTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Button layoutX="265.0" layoutY="457.0" mnemonicParsing="false" onAction="#submitPressed" text="SUBMIT" />
+      <Button layoutX="484.0" layoutY="457.0" mnemonicParsing="false" onAction="#cancelPressed" text="CANCEL" />
+      <ImageView fx:id="uploadPhoto" fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="52.0" onMouseClicked="#uploadImage" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
