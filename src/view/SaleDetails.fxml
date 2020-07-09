@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SaleDetailsController">
+   <children>
+      <Label layoutX="236.0" layoutY="27.0" text="YOUR SALE POST DETAILS " textFill="#ee1e6e">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="userLabel" layoutX="583.0" layoutY="34.0" text="s???????" />
+      <Label fx:id="saleIDlabel" layoutX="583.0" layoutY="57.0" text="SAL???" />
+      <ImageView fx:id="salePic" fitHeight="170.0" fitWidth="200.0" layoutX="36.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
+      <GridPane layoutX="251.0" layoutY="99.0" prefHeight="178.0" prefWidth="407.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="164.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="140.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Item Name :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Description:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Asking Price:" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Min Raise:" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Highest Offer:" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Status: " GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="saleTitleLabel" text="Label" GridPane.columnIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="saleDesLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="saleAskLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="saleMinLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="saleHighLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="saleStatLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="saleDescTextfield" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="saleTitleTextField" GridPane.columnIndex="2" />
+            <TextField fx:id="saleAskTexfield" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="saleMinTextfield" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button fx:id="uploadNewPic" layoutX="86.0" layoutY="300.0" mnemonicParsing="false" onAction="#uploadNewPicClicked" text="UPLOAD NEW PIC" />
+      <TableView fx:id="saleTableview" layoutX="65.0" layoutY="341.0" prefHeight="150.0" prefWidth="344.0">
+        <columns>
+          <TableColumn fx:id="responderCol" prefWidth="175.0" text="Responder" />
+          <TableColumn fx:id="offerCol" prefWidth="168.0" text="Offer" />
+        </columns>
+      </TableView>
+      <Button layoutX="319.0" layoutY="300.0" mnemonicParsing="false" onAction="#closePostClicked" prefHeight="25.0" prefWidth="101.0" text="CLOSE POST" />
+      <Button layoutX="439.0" layoutY="300.0" mnemonicParsing="false" onAction="#deletePostClicked" prefHeight="25.0" prefWidth="101.0" text="DELETE POST" />
+      <Button fx:id="saveButton" layoutX="557.0" layoutY="300.0" mnemonicParsing="false" onAction="#saveChangesClicked" text="SAVE CHANGES" />
+      <Button layoutX="559.0" layoutY="518.0" mnemonicParsing="false" onAction="#backMain" text="BACK TO MAIN" />
+      <Label layoutX="36.0" layoutY="543.0" text="Note: Your changes won't be saved unless you confirm by pressing Save Changes. " />
+   </children>
+</AnchorPane>

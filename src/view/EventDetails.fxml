@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EventDetailsController">
+   <children>
+      <Label layoutX="247.0" layoutY="26.0" text="YOUR EVENT DETAILS" textFill="#19ab33">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="usernameLabel" layoutX="600.0" layoutY="16.0" text="User">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="eventPicImg" fitHeight="189.0" fitWidth="200.0" layoutX="14.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" />
+      <GridPane layoutX="232.0" layoutY="76.0" prefHeight="189.0" prefWidth="432.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="99.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="180.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="140.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Name:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Description:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Venue:" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Date:" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Capacity:" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Attendees:" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="eventNameTextfield" prefHeight="40.0" prefWidth="137.0" GridPane.columnIndex="2" />
+            <TextField fx:id="eventDescrTextfield" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="eventVenueTextfield" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <DatePicker fx:id="eventDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="capacityTextfield" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label fx:id="eventNameLabel" text="Label" GridPane.columnIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="eventDescLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="eventVenueLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="eventDateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="eventCapacityLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="eventAtCountLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Status:" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="eventStatusLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <TableView fx:id="respondersTable" layoutX="44.0" layoutY="343.0" prefHeight="120.0" prefWidth="293.0">
+        <columns>
+          <TableColumn fx:id="respondersCol" prefWidth="292.0" text="Responders" />
+        </columns>
+      </TableView>
+      <Button layoutX="365.0" layoutY="343.0" mnemonicParsing="false" onAction="#closePostClicked" text="CLOSE POST" />
+      <Button layoutX="476.0" layoutY="343.0" mnemonicParsing="false" onAction="#deletePostClicked" text="DELETE POST" />
+      <Button fx:id="saveButton" layoutX="582.0" layoutY="343.0" mnemonicParsing="false" onAction="#saveChangedClicked" text="SAVE CHANGES " />
+      <Button layoutX="549.0" layoutY="515.0" mnemonicParsing="false" onAction="#backToMainClicked" prefHeight="29.0" prefWidth="131.0" text="BACK TO MAIN" />
+      <Label layoutX="22.0" layoutY="523.0" prefHeight="43.0" prefWidth="529.0" text="Note: Your changes won't be saved unless you confirm by pressing Save Change. " />
+      <Button fx:id="uploadPicButton" layoutX="58.0" layoutY="289.0" mnemonicParsing="false" onAction="#uploadNewPicClicked" text="UPLOAD NEW PIC" />
+      <Label fx:id="postIDLabel" layoutX="593.0" layoutY="48.0" text="POST ID" />
+   </children>
+</AnchorPane>

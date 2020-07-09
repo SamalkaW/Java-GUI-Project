@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewSaleController">
+   <children>
+      <Label layoutX="249.0" layoutY="14.0" text="New Sale Post" textFill="#ff3287">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="78.0" layoutY="244.0" prefHeight="195.0" prefWidth="422.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="1. Item Name: ">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="2. Item Description: " GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="3. Item Asking Price: " GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="4. Item Minimum Raise: " GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="saleNameTextField" GridPane.columnIndex="1" />
+            <TextField fx:id="saleDescriptionTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="saleAskingTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="saleMinRaiseTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button layoutX="249.0" layoutY="503.0" mnemonicParsing="false" onAction="#submitButtonPressed" text="SUBMIT" />
+      <Button layoutX="489.0" layoutY="503.0" mnemonicParsing="false" onAction="#cancelButtonPressed" text="CANCEL" />
+      <ImageView fx:id="uploadPhoto" fitHeight="150.0" fitWidth="200.0" layoutX="207.0" layoutY="61.0" onMouseClicked="#uploadPhotoClicked" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
